@@ -6,6 +6,8 @@
     // default layout
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
+    --black-color: #000;
+    --text-color:var(--black-color) #333;
 }
 
 * {
@@ -20,4 +22,15 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
+    color: var(--text-color);
+}
+
+button, input, [tabinde] {
+    outline: none;
+    border: none;
+}
+
+a[href] {
+    color: var(--text-color);
+    text-decoration: none;
 }
