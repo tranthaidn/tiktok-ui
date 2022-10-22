@@ -18,10 +18,14 @@
     justify-content: space-between;
 }
 
+.search, .search-result {
+    width: 361px;
+}
+
 .search {
     position: relative;
     background-color: rgba(22, 24, 35, .06);
-    width: 361px;
+   
     height: var(--search-height);
     border-radius: 92px;
     padding-left: 16px;
@@ -39,6 +43,13 @@
         border: 1.5px solid rgba(22, 24, 35, .2);
     }
     
+}
+
+.search-title {
+    color: rgba(22, 24, 35, .5);
+    padding: 5px 16px;
+    font-size: 1.4rem;
+    font-weight: 600;
 }
 
 input:not(:placeholder-shown) ~ .search-btn {
