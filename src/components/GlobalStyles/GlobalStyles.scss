@@ -7,7 +7,8 @@
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
     --black-color: #000;
-    --text-color:var(--black-color) #333;
+    --text-color: var(--black-color) #333;
+    --primary-color: rgba(254, 44, 85, 1);
 }
 
 * {
@@ -25,7 +26,9 @@ body {
     color: var(--text-color);
 }
 
-button, input, [tabinde] {
+button,
+input,
+[tabinde] {
     outline: none;
     border: none;
 }
