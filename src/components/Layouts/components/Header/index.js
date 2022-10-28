@@ -1,4 +1,4 @@
-import { faCircleQuestion, faCircleXmark, faEarthAsia, faEllipsisVertical, faKeyboard, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faCircleQuestion, faCircleXmark, faEarthAsia, faEllipsisVertical, faKeyboard, faMagnifyingGlass, faPlus, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
@@ -13,12 +13,28 @@ import Menu from '~/components/Popper/Menu';
 
 const cx = classNames.bind(styles);
 
+
+
 const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
-        title: "English"
-
-    },
+        title: "English",
+        children: {
+            title: "Language",
+            data : [
+                {
+                    type:"language",
+                    code: "en",
+                    title: "English",
+                },
+                {
+                    type:"language",
+                    code: "vn",
+                    title: "Vietnamese"
+                }
+            ]
+        }
+    },    
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
         title: "Feedback &Help",
@@ -38,6 +54,10 @@ function Header() {
             setSearchResult([]);
         }, 0);
     }, []);
+    // Handle logic
+    const handleMenuChange = (menuItem)=>{
+        console.log(menuItem);
+    }
 
     return (
         <header className={cx('wrapper')}>
@@ -73,10 +93,13 @@ function Header() {
                     </div>
                 </Tippy>
                 <div className={cx('actions')}>
-                    <Button text>Upload</Button>
+                    <Button outline>
+                        <FontAwesomeIcon icon={faPlus}/>
+                        Upload
+                    </Button>
                     <Button primary>Login</Button>
 
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                        <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                        </button>

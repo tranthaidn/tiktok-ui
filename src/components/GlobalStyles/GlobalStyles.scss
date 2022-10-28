@@ -2,13 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,300&display=swap');
 
 :root {
-    --primary-color: #fe2c55;
-    // default layout
+    --primary-color: rgba(254, 44, 85, 1);
+    --black-color: #000;
+    --white-color: #fff;
+    --text-color: #333;
+
+    // Default layout
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
-    --black-color: #000;
-    --text-color: var(--black-color) #333;
-    --primary-color: rgba(254, 44, 85, 1);
+    --default-layout-horizontal-spacer: 24px 
+   
 }
 
 * {
