@@ -46,6 +46,19 @@ input:not(:placeholder-shown) ~ .search-btn {
     
 }
 
+.loading {
+    animation: spiner 0.8s linear infinite;
+}
+
+@keyframes spiner {
+    from {
+        transform: translateY(-50%) rotate(0);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
 .search-btn {
     position: relative;
     width: var(--search-button-width);
