@@ -5,6 +5,7 @@ import classNames from 'classnames/bind';
 import { useEffect, useRef, useState } from 'react';
 import 'tippy.js/dist/tippy.css';
 
+import * as searchServices from '~/apiServices/searchServices';
 import AccountItem from '~/components/AccountItem';
 import { SearchIcon } from '~/components/Icon';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
@@ -18,7 +19,7 @@ function Search() {
     const [searchResult, setSearchResult] = useState([]);
     const [showResult, setShowResult] = useState(true);
     const [loading, setLoading] = useState(false);
-    const debounced = useDebounce(searchValue , 500);
+    const debounced = useDebounce(searchValue, 500);
     const inputRef = useRef();
     useEffect(() => {
         if (!debounced.trim()) {
@@ -26,17 +27,13 @@ function Search() {
             return;
         }
 
-        setLoading(true);
-
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
-            .then((res) => res.json())
-            .then((res) => {
-                setSearchResult(res.data);
-                setLoading(false);
-            })
-            .catch(()=> {
-                setLoading(false);
-            });
+        const fetchApi = async () => {
+            setLoading(true);
+            const results = await searchServices.search(debounced);
+            setSearchResult(results);
+            setLoading(false);
+        };
+        fetchApi();
     }, [debounced]);
 
     const handleClear = () => {
@@ -77,7 +74,7 @@ function Search() {
                         <FontAwesomeIcon icon={faCircleXmark} />
                     </button>
                 )}
-                { loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} /> }
+                {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
 
                 <button className={cx('search-btn')}>
                     <SearchIcon />
