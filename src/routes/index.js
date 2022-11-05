@@ -1,3 +1,9 @@
+import routesConfig from '~/config/routes';
+
+// Layouts
+// import HeaderOnly from '~/components/Layouts';
+
+// Page
 import Home from '~/pages/Home';
 import Following from '~/pages/Following';
 import Upload from '~/pages/Upload';
@@ -8,11 +14,11 @@ import Search from '~/pages/Search';
 // public route dùng cho k cần đăng nhập vẫn sử dụng
 
 const publicRoutes = [
-    { path: '/', component: Home },
-    { path: '/following', component: Following },
-    { path: '/@:nickname', component: Profile },
-    { path: '/upload', component: Upload, layout:null},
-    { path: '/search', component: Search },
+    { path: routesConfig.home, component: Home },
+    { path: routesConfig.following, component: Following },
+    { path: routesConfig.profile, component: Profile },
+    { path: routesConfig.upload, component: Upload, layout:null},
+    { path: routesConfig.search, component: Search },
 ];
 const privateRoutes = [];
 
