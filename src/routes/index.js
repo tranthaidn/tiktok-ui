@@ -1,7 +1,7 @@
-import routesConfig from '~/config/routes';
+import config from '~/config';
 
 // Layouts
-// import HeaderOnly from '~/components/Layouts';
+import  HeaderOnly  from '~/layouts/HeaderOnly';
 
 // Page
 import Home from '~/pages/Home';
@@ -14,11 +14,11 @@ import Search from '~/pages/Search';
 // public route dùng cho k cần đăng nhập vẫn sử dụng
 
 const publicRoutes = [
-    { path: routesConfig.home, component: Home },
-    { path: routesConfig.following, component: Following },
-    { path: routesConfig.profile, component: Profile },
-    { path: routesConfig.upload, component: Upload, layout:null},
-    { path: routesConfig.search, component: Search },
+    { path: config.routes.home, component: Home },
+    { path: config.routes.following, component: Following },
+    { path: config.routes.profile, component: Profile },
+    { path: config.routes.upload, component: Upload, layout: HeaderOnly},
+    { path: config.routes.search, component: Search, layout: null},
 ];
 const privateRoutes = [];
 
