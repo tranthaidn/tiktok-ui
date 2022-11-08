@@ -54,7 +54,7 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-    const currentUser = true;
+    const currentUser = true; // Visitor if false
     const userMenu = [
         {
             icon: <FontAwesomeIcon icon={faUser} />,

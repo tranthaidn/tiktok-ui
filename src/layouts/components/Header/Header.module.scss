@@ -19,10 +19,10 @@
 .inner {
     height: 100%;
     width: var(--default-layout-width);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 0 var(--default-layout-horizontal-spacer);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo-link {
@@ -37,14 +37,15 @@
 
 .more-btn {
     font-size: 2rem;
-    margin-left: 24px;
-    background-color: transparent;
+    margin-left: 28px;
     padding: 4px 8px;
+    background-color: transparent;
     cursor: pointer;
 }
 
 .action-btn {
     position: relative;
+    display: flex;
     background-color: transparent;
     color:#161823;
     font-size: 2.2rem;
