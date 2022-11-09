@@ -7,7 +7,7 @@ import 'tippy.js/dist/tippy.css';
 
 import * as searchServices from '~/services/searchService';
 import AccountItem from '~/components/AccountItem/AccountItem';
-import { SearchIcon } from '~/components/Icon/Icon';
+import { SearchIcon } from '~/components/Icons/Icon';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { useDebounce } from '~/hooks';
 import styles from './Search.module.scss';
